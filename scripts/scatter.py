@@ -1,5 +1,7 @@
 from __future__ import print_function
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import numpy as np
 import sys
 
 def main():
@@ -23,14 +25,48 @@ def main():
     create_graph(data, title, x_axis, y_axis, output_file)
 
 def create_graph(data, title, x_axis, y_axis, output_file):
-    # Plot data
-    xs = range(0, len(data))
-    plt.scatter(xs, data)
+    # Setup graph dimensions
+    left, width = 0.1, 0.65
+    bottom, height = 0.1, 0.8
+    bottom_h = left_h = left + width + 0.02
 
-    # Label graph
+    rect_scatter = [left, bottom, width, height]
+    rect_histy = [left_h, bottom, 0.2, height]
+
+    plt.figure(1, figsize=(10, 8))
+
+    # Create scatter graph
+    axScatter = plt.axes(rect_scatter)
+
     plt.title(title)
     plt.xlabel(x_axis)
     plt.ylabel(y_axis)
+
+    # Create histogram
+    axHisty = plt.axes(rect_histy)
+
+    nullfmt = ticker.NullFormatter()
+    axHisty.yaxis.set_major_formatter(nullfmt)
+    axHisty.xaxis.set_major_formatter(nullfmt)
+
+    # Plot scatter data
+    points = len(data)
+    xs = range(0, points)
+    axScatter.scatter(xs, data)
+
+    # Plot histogram data
+    start = 0
+    end = 1.2 + 0.000000001
+    interval = 0.025
+    bins = np.arange(start, end, interval)
+    axHisty.hist(data, bins=bins, orientation='horizontal')
+
+    # Set graph limits
+    offset = points / 50
+    axScatter.set_xlim(0 - offset, points + offset)
+    axScatter.set_ylim(start, end)
+
+    axHisty.set_ylim(axScatter.get_ylim())
 
     # Save graph to file
     plt.savefig(output_file)
