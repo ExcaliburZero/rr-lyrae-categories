@@ -23,19 +23,14 @@ def main():
         sys.exit(1)
 
     # Get data
-    rrab_mu = 0.595879
-    rrc_mu = 0.3657921
-    rrd_mu = 0.3804337
-    rre_mu = 0.2933169
-    mus = [rrab_mu, rrc_mu, rrd_mu, rre_mu]
+    line_names = []
+    mus = []
+    rows = []
 
-    rrab_row = 0.05925889
-    rrc_row = 0.02584546
-    rrd_row = 0.02022942
-    rre_row = 0.0251186
-    rows = [rrab_row, rrc_row, rrd_row, rre_row]
-
-    line_names = ["RRab", "RRc", "RRd", "RRe"]
+    for _ in range(0,4):
+        line_names.append(raw_input(""))
+        mus.append(float(raw_input("")))
+        rows.append(float(raw_input("")))
 
     # Create graph
     create_graph(mus, rows, line_names, title, x_axis, y_axis, output_file)
