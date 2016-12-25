@@ -27,7 +27,9 @@ def main():
     mus = []
     rows = []
 
-    for _ in range(0,4):
+    entries = int(raw_input(""))
+
+    for _ in range(0, entries):
         line_names.append(raw_input(""))
         mus.append(float(raw_input("")))
         rows.append(float(raw_input("")))
