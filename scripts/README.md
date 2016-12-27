@@ -2,6 +2,7 @@
 These are the scripts that we used for analyzing the OGLE III and IV RR Lyrae Data.
 
 * [mean-sd.R](#mean-sdr)
+* [Makefile](#makefile)
 * [scatter.py](#scatterpy)
 * [function.py](#functionpy)
 * [functions-overlay.py](#functions-overlaypy)
@@ -50,6 +51,29 @@ Output structure:
 ```
 MEAN
 STANDARD_DEVIATION
+```
+
+## Makefile
+The Makefile allows for the automated creation of all of the graphs. In the Makefile, the graph type (png, pdf, esp, etc.), graph output file path, and the path for the data files can all be specified.
+
+```Makefile
+GRAPHTYPE=eps
+GRAPHPATH=../graphs/
+DATAPATH=~/Documents/ogle/
+```
+
+Once those variables have been specified, you can run the following command to generate all of the graphs.
+
+```
+$ make all
+```
+
+Additionally, you can generate all graphs of one specific type by running one of the following commands.
+
+```
+$ make scatter
+$ make function
+$ make overall
 ```
 
 ## scatter.py
