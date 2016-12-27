@@ -19,7 +19,7 @@ def main():
     else:
         error("Invalid number of arguments. Requires title, x-axis, y-axis, and output file.")
         error("")
-        error("python function.py TITLE X_AXIS Y_AXIS OUTPUT_FILE")
+        error("python functions-overlay.py TITLE X_AXIS Y_AXIS OUTPUT_FILE")
         sys.exit(1)
 
     # Get data
