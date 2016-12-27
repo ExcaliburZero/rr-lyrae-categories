@@ -1,6 +1,52 @@
 # Scripts
 These are the scripts that we used for analyzing the OGLE III and IV RR Lyrae Data.
 
+## mean-sd.R
+Calculates the mean and standard deviation of the given data.
+
+```
+$ ./mean-sd.R ~/Documents/ogle/ogle3/smc/RRab-periods.dat
+0.595879 
+0.05925889
+```
+
+### Usage
+Command structure:
+
+```
+./mean-sd.R DATA_FILE
+```
+
+Data file structure:
+
+```
+PERIOD_1
+PERIOD_2
+...
+```
+
+Example data file:
+
+```
+0.5588141
+0.5947913
+0.6506693
+0.5652567
+0.5471791
+0.6328832
+0.6947615
+0.5530407
+0.5957614
+0.6256321
+```
+
+Output structure:
+
+```
+MEAN
+STANDARD_DEVIATION
+```
+
 ## scatter.py
 Creates a scatter graph of all of the given period values.
 
