@@ -23,8 +23,8 @@ def main():
         sys.exit(1)
 
     # Get data
-    mu = float(raw_input("Mean: "))
-    row = float(raw_input("Standard Deviation: "))
+    mu = float(raw_input(""))
+    row = float(raw_input(""))
 
     # Create graph
     create_graph(mu, row, title, x_axis, y_axis, output_file)
