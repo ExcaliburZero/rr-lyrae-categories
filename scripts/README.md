@@ -1,6 +1,45 @@
 # Scripts
 These are the scripts that we used for analyzing the OGLE III and IV RR Lyrae Data.
 
+## scatter.py
+Creates a scatter graph of all of the given period values.
+
+```
+$ python scatter.py "RRab Periods (SMC OGLE III)" "Number" "Period (days)" ../graphs/ogle3_smc_RRab_scatter.png < ~/Documents/ogle/ogle3/smc/RRab-periods.dat
+```
+
+![scatter.py example](../graphs/ogle3_smc_RRab_scatter.png)
+
+### Usage
+Command structure:
+
+```
+python scatter.py TITLE X_AXIS Y_AXIS OUTPUT_FILE < DATA_FILE
+```
+
+Data file structure:
+
+```
+PERIOD_1
+PERIOD_2
+...
+```
+
+Example data file:
+
+```
+0.5588141
+0.5947913
+0.6506693
+0.5652567
+0.5471791
+0.6328832
+0.6947615
+0.5530407
+0.5957614
+0.6256321
+```
+
 ## function.py
 Creates a graph of a probability function using provided mean and standard deviation values.
 
