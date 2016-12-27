@@ -1,6 +1,11 @@
 # Scripts
 These are the scripts that we used for analyzing the OGLE III and IV RR Lyrae Data.
 
+* [mean-sd.R](#mean-sdr)
+* [scatter.py](#scatterpy)
+* [function.py](#functionpy)
+* [functions-overlay.py](#functions-overlaypy)
+
 ## mean-sd.R
 Calculates the mean and standard deviation of the given data.
 
